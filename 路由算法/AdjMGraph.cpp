@@ -220,7 +220,8 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 			}
 	}
 	printf("目的路由  下一跳路由\n");
-	fp = fopen("luyoubiao.txt", "w");
+	errno_t err;//标志文件打开与否
+	err = fopen_s(&fp, "routinlist.txt", "w");
 	for (i = 0;i < n;i++)
 	{
 		if (i == v0) continue;
