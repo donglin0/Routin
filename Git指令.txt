@@ -1,0 +1,39 @@
+master
+mkdir 建文件夹
+cd 进入文件夹或盘
+git init 把这个文件夹变成Git可管理的仓库
+.git 用来跟踪和管理版本库，默认隐藏文件
+git add.  .表示文件夹下全部目录都提交
+git status 查看下现在的状态
+git commit -m "这里面写你的注释"  把文件提交的本地仓库
+
+$ ssh-keygen -t rsa -C "youremail@example.com" 创建SSH KEY
+
+github上新建SSH key
+git remote add origin git@github.com:donglin0/luyou.git 和本地仓库进行关联
+
+
+上传指令 git push origin master。
+
+
+git remote -v //查看现有的库关联
+clone到本地就自动和网上的建立的关联
+
+git fetch：相当于是从远程获取最新版本到本地，不会自动merge
+
+git fetch origin master:tmp
+git diff tmp 
+git merge tmp
+
+git pull：相当于是从远程获取最新版本并merge到本地
+git pull origin master
+上述命令其实相当于先执行 git fetch 后执行 git merge。
+
+
+
+
+git 在pull或者合并分支的时候有时会遇到这个界面。可以不管(直接下面3,4步)，如果要输入解释的话就需要:
+1.按键盘字母 i 进入insert模式
+2.修改最上面那行黄色合并信息,可以不修改
+3.按键盘左上角"Esc"
+4.输入":wq",注意是冒号+wq,按回车键即可
