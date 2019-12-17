@@ -162,6 +162,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjMGraph.h" />
+    <ClInclude Include="CreatGraph.h" />
+    <ClInclude Include="DeleteEdge.h" />
+    <ClInclude Include="DeleteVertex.h" />
+    <ClInclude Include="Dijkstra.h" />
+    <ClInclude Include="GetFirstVex.h" />
+    <ClInclude Include="GetNextVex.h" />
+    <ClInclude Include="GraphInitiate.h" />
+    <ClInclude Include="InsertEdge.h" />
+    <ClInclude Include="InsertVertex.h" />
     <ClInclude Include="SeqList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

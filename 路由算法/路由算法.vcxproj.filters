@@ -59,5 +59,32 @@
     <ClInclude Include="SeqList.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="GraphInitiate.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertVertex.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertEdge.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteEdge.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteVertex.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GetFirstVex.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GetNextVex.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatGraph.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dijkstra.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

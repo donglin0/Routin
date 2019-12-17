@@ -186,7 +186,7 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 	int n = G->vertices.size;
 	int* S = (int*)malloc(sizeof(int) * n); //S数组
 	int minDis, i, j, u;
-	FILE* fp;
+	FILE* fp=NULL;
 	/*初始化*/
 	for (i = 0; i < n; i++)
 	{
