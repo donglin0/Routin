@@ -1,6 +1,6 @@
 #include"AdjMGraph.h"
-
-//ÖÃ´øÈ¨ÓĞÏòÍ¼GÎª¿ÕÍ¼
+//123456
+//ç½®å¸¦æƒæœ‰å‘å›¾Gä¸ºç©ºå›¾
 void GraphInitiate(AdjMGraph* G)
 
 {
@@ -12,14 +12,14 @@ void GraphInitiate(AdjMGraph* G)
 				G->edge[i][j] = 0;
 			}
 			else {
-				G->edge[i][j] = MaxWeight;//MaxWeight±íÊ¾È¨ÖµÎŞÇî´ó
+				G->edge[i][j] = MaxWeight;//MaxWeightè¡¨ç¤ºæƒå€¼æ— ç©·å¤§
 			}
 		}
-	G->numOfEdges = 0;  //±ßµÄÌõÊıÖÃÎª0
-	ListInitiate(&G->vertices);  //¶¥µãË³Ğò±í³õÊ¼»¯
+	G->numOfEdges = 0;  //è¾¹çš„æ¡æ•°ç½®ä¸º0
+	ListInitiate(&G->vertices);  //é¡¶ç‚¹é¡ºåºè¡¨åˆå§‹åŒ–
 }
 
-//ÔÚ´øÈ¨ÓĞÏòÍ¼GÖĞÈ¡µÚv¸ö¶¥µãµÄµÚÒ»¸öÁÚ½Ó¶¥µã£¬Èç¹ûÕâÑùµÄÁÚ½Ó¶¥µã´æÔÚ£¬Ôò·µ»Ø¸Ã¶¥µãÔÚ¶¥µãË³Ğò±íµÄĞòºÅ£¬·ñÔò·µ»Ø-1.Ê±¼ä¸´ÔÓ¶È:O(n)¡£
+//åœ¨å¸¦æƒæœ‰å‘å›¾Gä¸­å–ç¬¬vä¸ªé¡¶ç‚¹çš„ç¬¬ä¸€ä¸ªé‚»æ¥é¡¶ç‚¹ï¼Œå¦‚æœè¿™æ ·çš„é‚»æ¥é¡¶ç‚¹å­˜åœ¨ï¼Œåˆ™è¿”å›è¯¥é¡¶ç‚¹åœ¨é¡¶ç‚¹é¡ºåºè¡¨çš„åºå·ï¼Œå¦åˆ™è¿”å›-1.æ—¶é—´å¤æ‚åº¦:O(n)ã€‚
 int GetFirstVex(AdjMGraph G, int v)
 
 {
@@ -28,32 +28,32 @@ int GetFirstVex(AdjMGraph G, int v)
 	v = v - 1;
 	if (ListGet(G.vertices, v, &x) == 0)
 	{
-		printf("È¡µÚÒ»¸öÁÚ½Ó¶¥µãÊ±²ÎÊıvÔ½½ç³ö´í£¡\n");
+		printf("å–ç¬¬ä¸€ä¸ªé‚»æ¥é¡¶ç‚¹æ—¶å‚æ•°vè¶Šç•Œå‡ºé”™ï¼\n");
 		exit(1);
 	}
-	//Ñ°ÕÒÁÚ½Ó¾ØÕóvĞĞÖĞ´Ó×î×ó¿ªÊ¼µÚÒ»¸öÖµ·ÇÁãÇÒ·ÇÎŞÇî´óµÄÈ¨Öµ¶ÔÓ¦µÄ¶¥µã
+	//å¯»æ‰¾é‚»æ¥çŸ©é˜µvè¡Œä¸­ä»æœ€å·¦å¼€å§‹ç¬¬ä¸€ä¸ªå€¼éé›¶ä¸”éæ— ç©·å¤§çš„æƒå€¼å¯¹åº”çš„é¡¶ç‚¹
 	for (col = 0;col < G.vertices.size;col++)
 		if (G.edge[v][col] > 0 && G.edge[v][col] < MaxWeight)
 			return col;
 	return -1;
 }
 
-//ÔÚ´øÈ¨ÓĞÏòÍ¼GÖĞÈ¡µÚv1¸ö¶¥µãµÄ¼ÌÁÚ½Ó½áµãµÚv2¸ö¶¥µãÖ®ºóµÄÏÂÒ»¸öÁÚ½Ó½áµã,Ê±¼ä¸´ÔÓ¶È:O(n)¡£
+//åœ¨å¸¦æƒæœ‰å‘å›¾Gä¸­å–ç¬¬v1ä¸ªé¡¶ç‚¹çš„ç»§é‚»æ¥ç»“ç‚¹ç¬¬v2ä¸ªé¡¶ç‚¹ä¹‹åçš„ä¸‹ä¸€ä¸ªé‚»æ¥ç»“ç‚¹,æ—¶é—´å¤æ‚åº¦:O(n)ã€‚
 int GetNextVex(AdjMGraph G, int v1, int v2)
 {
 	int col;
 	DataType x;
 	if ((ListGet(G.vertices, v1, &x) == 0) || (ListGet(G.vertices, v2, &x) == 0))
 	{
-		printf("È¡ÏÂÒ»ÁÚ½Ó¶¥µãÊ±²ÎÊıv1ºÍv2Ô½½ç³ö´í£¡\n");
+		printf("å–ä¸‹ä¸€é‚»æ¥é¡¶ç‚¹æ—¶å‚æ•°v1å’Œv2è¶Šç•Œå‡ºé”™ï¼\n");
 		exit(1);
 	}
 	if (G.edge[v1][v2] == 0)
 	{
-		printf("v2²»ÊÇv1µÄÁÚ½Ó¶¥µã\n");
+		printf("v2ä¸æ˜¯v1çš„é‚»æ¥é¡¶ç‚¹\n");
 		exit(1);
 	}
-	//Ñ°ÕÒÁÚ½Ó¾ØÕóvĞĞÖĞ´ÓµÚv2+1ÁĞ¿ªÊ¼µÄµÚÒ»¸öÖµ·ÇÁãÇÒ·ÇÎŞÇî´óµÄÈ¨Öµ¶ÔÓ¦µÄ¶¥µã
+	//å¯»æ‰¾é‚»æ¥çŸ©é˜µvè¡Œä¸­ä»ç¬¬v2+1åˆ—å¼€å§‹çš„ç¬¬ä¸€ä¸ªå€¼éé›¶ä¸”éæ— ç©·å¤§çš„æƒå€¼å¯¹åº”çš„é¡¶ç‚¹
 	for (col = v2 + 1;col < G.vertices.size;col++)
 		if (G.edge[v1][col] > 0 && G.edge[v1][col] < MaxWeight)
 			return col;
@@ -61,18 +61,18 @@ int GetNextVex(AdjMGraph G, int v1, int v2)
 }
 
 
-//´´½¨ÓĞÏòÍ¼G£¬Í¨¹ıÔÚ¿ÕÍ¼GÖĞ²åÈën¸ö¶¥µãºÍeÌõ±ßÊµÏÖ¡£Ê±¼ä¸´ÔÓ¶È:O(n^2+e)¡£
+//åˆ›å»ºæœ‰å‘å›¾Gï¼Œé€šè¿‡åœ¨ç©ºå›¾Gä¸­æ’å…¥nä¸ªé¡¶ç‚¹å’Œeæ¡è¾¹å®ç°ã€‚æ—¶é—´å¤æ‚åº¦:O(n^2+e)ã€‚
 void CreatGraph(AdjMGraph* G, DataType v[], int n, RowColWeight W[], int e)
 {
 	int i, k;
-	GraphInitiate(G);//Í¼³õÊ¼»¯
+	GraphInitiate(G);//å›¾åˆå§‹åŒ–
 	for (i = 0;i < n;i++)
 	{
 		//cout<<n<<endl;
-		InsertVertex(G, v[i]);//²åÈë¶¥µã
+		InsertVertex(G, v[i]);//æ’å…¥é¡¶ç‚¹
 	}
 	for (k = 0;k < e;k++)
-		InsertEdge(G, W[k].row, W[k].col, W[k].weight);//²åÈë±ß
+		InsertEdge(G, W[k].row, W[k].col, W[k].weight);//æ’å…¥è¾¹
 }
 
 
@@ -83,7 +83,7 @@ void InsertEdge(AdjMGraph* G, int v1, int v2, int weight)
 	{	
 		if ((ListGet(G->vertices, v1, &x) == 0) || (ListGet(G->vertices, v2, &x) == 0))
 		{
-			printf("²åÈë±ßÊ±²ÎÊıv1ºÍv2Ô½½ç³ö´í£¡\n");
+			printf("æ’å…¥è¾¹æ—¶å‚æ•°v1å’Œv2è¶Šç•Œå‡ºé”™ï¼\n");
 			exit(1);
 		}
 		G->edge[v1][v2] = weight;
@@ -96,16 +96,16 @@ void InsertVertex(AdjMGraph* G, DataType vertex)
 
 {
 	//if(IsVertex(G,vertex)<0)
-	if (ListInsert(&G->vertices, G->vertices.size, vertex) == 0)//ÔÚ¶¥µãË³Ğò±íµÄ±íÎ²²åÈë¶¥µãvertex
+	if (ListInsert(&G->vertices, G->vertices.size, vertex) == 0)//åœ¨é¡¶ç‚¹é¡ºåºè¡¨çš„è¡¨å°¾æ’å…¥é¡¶ç‚¹vertex
 	{
-		printf("²åÈë¶¥µãÊ±¿Õ¼äÒÑÂúÎŞ·¨²åÈë£¡");
+		printf("æ’å…¥é¡¶ç‚¹æ—¶ç©ºé—´å·²æ»¡æ— æ³•æ’å…¥ï¼");
 		exit(1);
 	}
 }
 
 
 
-// ÔÚ´øÈ¨ÓĞÏòÍ¼GÖĞÉ¾³ıÒ»ÌõµÚv1¸ö¶¥µãÖ¸ÏòµÚv2¸ö¶¥µãµÄ±ß¡£
+// åœ¨å¸¦æƒæœ‰å‘å›¾Gä¸­åˆ é™¤ä¸€æ¡ç¬¬v1ä¸ªé¡¶ç‚¹æŒ‡å‘ç¬¬v2ä¸ªé¡¶ç‚¹çš„è¾¹ã€‚
 
 void DeleteEdge(AdjMGraph* G, int v1, int v2)
 
@@ -119,9 +119,9 @@ void DeleteEdge(AdjMGraph* G, int v1, int v2)
 
 }
 
-//É¾³ı¶¥µã
+//åˆ é™¤é¡¶ç‚¹
 
-//ÔÚ´øÈ¨ÓĞÏòÍ¼GÖĞÉ¾³ıµÚv¸ö¶¥µã£¬Ê±¼ä¸´ÔÓ¶È:O(n^2)¡£
+//åœ¨å¸¦æƒæœ‰å‘å›¾Gä¸­åˆ é™¤ç¬¬vä¸ªé¡¶ç‚¹ï¼Œæ—¶é—´å¤æ‚åº¦:O(n^2)ã€‚
 
 void DeleteVertex(AdjMGraph* G, int v)
 
@@ -135,7 +135,7 @@ void DeleteVertex(AdjMGraph* G, int v)
 
 	{
 
-		printf("¶Ô²»Æğ£¬´ËÁ´Â·ÄÚÃ»ÓĞÄúÏëÒªÉ¾³ıµÄÂ·ÓÉ½Úµã\n");
+		printf("å¯¹ä¸èµ·ï¼Œæ­¤é“¾è·¯å†…æ²¡æœ‰æ‚¨æƒ³è¦åˆ é™¤çš„è·¯ç”±èŠ‚ç‚¹\n");
 
 		exit(0);
 
@@ -167,27 +167,27 @@ void DeleteVertex(AdjMGraph* G, int v)
 
 		//              G->vertices.size--;
 
-		//            printf("É¾³ı½áµã³É¹¦\n");
+		//            printf("åˆ é™¤ç»“ç‚¹æˆåŠŸ\n");
 
 	}
 
 }
 
 
-//µÏ¿ËÌØË¹À­Ëã·¨ÇóµÃÊÇ×î¶ÌÂ·¾¶ºÍÏàÓ¦µÄÂ·ÓÉÆ÷
+//è¿ªå…‹ç‰¹æ–¯æ‹‰ç®—æ³•æ±‚å¾—æ˜¯æœ€çŸ­è·¯å¾„å’Œç›¸åº”çš„è·¯ç”±å™¨
 
 void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 
-/*´øÈ¨Í¼G´ÓÏÂ±ê0¶¥µãµ½ÆäËü¶¥µãµÄ×î¶Ì¾àÀëdistance*/
+/*å¸¦æƒå›¾Gä»ä¸‹æ ‡0é¡¶ç‚¹åˆ°å…¶å®ƒé¡¶ç‚¹çš„æœ€çŸ­è·ç¦»distance*/
 
-/*ºÍ×î¶ÌÂ·¾¶ÉÏ¶¥µãÇ°ÇıÏÂ±êpath*/
+/*å’Œæœ€çŸ­è·¯å¾„ä¸Šé¡¶ç‚¹å‰é©±ä¸‹æ ‡path*/
 
 {
 	int n = G->vertices.size;
-	int* S = (int*)malloc(sizeof(int) * n); //SÊı×é
+	int* S = (int*)malloc(sizeof(int) * n); //Sæ•°ç»„
 	int minDis, i, j, u;
 	FILE* fp;
-	/*³õÊ¼»¯*/
+	/*åˆå§‹åŒ–*/
 	for (i = 0; i < n; i++)
 	{
 		distance[i] = G->edge[v0][i];
@@ -197,7 +197,7 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 		else path[i] = -1;
 	}
 	S[v0] = 1;
-	/*ÔÚµ±Ç°»¹Î´ÕÒµ½×î¶ÌÂ·¾¶µÄ¶¥µã¼¯ÖĞÑ¡È¡¾ßÓĞ×î¶Ì¾àÀëµÄ¶¥µãu*/
+	/*åœ¨å½“å‰è¿˜æœªæ‰¾åˆ°æœ€çŸ­è·¯å¾„çš„é¡¶ç‚¹é›†ä¸­é€‰å–å…·æœ‰æœ€çŸ­è·ç¦»çš„é¡¶ç‚¹u*/
 	for (i = 1; i < n; i++)
 	{
 		minDis = MaxWeight;
@@ -207,10 +207,10 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 				u = j;
 				minDis = distance[j];
 			}
-		/*µ±ÒÑ²»ÔÙ´æÔÚÂ·¾¶Ê±Ëã·¨½áÊø*/
+		/*å½“å·²ä¸å†å­˜åœ¨è·¯å¾„æ—¶ç®—æ³•ç»“æŸ*/
 		if (minDis == MaxWeight) return;
-		S[u] = 1; /*±ê¼Ç¶¥µãuÒÑ´Ó¼¯ºÏT¼ÓÈëµ½¼¯ºÏSÖĞ*/
-		/*ĞŞ¸Ä´Óv0µ½ÆäËü¶¥µãµÄ×î¶Ì¾àÀëºÍ×î¶ÌÂ·¾¶*/
+		S[u] = 1; /*æ ‡è®°é¡¶ç‚¹uå·²ä»é›†åˆTåŠ å…¥åˆ°é›†åˆSä¸­*/
+		/*ä¿®æ”¹ä»v0åˆ°å…¶å®ƒé¡¶ç‚¹çš„æœ€çŸ­è·ç¦»å’Œæœ€çŸ­è·¯å¾„*/
 		for (j = 0; j < n; j++)
 			if (S[j] == 0 && G->edge[u][j] < MaxWeight &&
 				distance[u] + G->edge[u][j] < distance[j])
@@ -219,8 +219,8 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 				path[j] = u;
 			}
 	}
-	printf("Ä¿µÄÂ·ÓÉ  ÏÂÒ»ÌøÂ·ÓÉ\n");
-	errno_t err;//±êÖ¾ÎÄ¼ş´ò¿ªÓë·ñ
+	printf("ç›®çš„è·¯ç”±  ä¸‹ä¸€è·³è·¯ç”±\n");
+	errno_t err;//æ ‡å¿—æ–‡ä»¶æ‰“å¼€ä¸å¦
 	err = fopen_s(&fp, "routinlist.txt", "w");
 	for (i = 0;i < n;i++)
 	{
