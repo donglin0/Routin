@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="路由算法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="AdjMGraph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -49,6 +46,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="seqlist.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

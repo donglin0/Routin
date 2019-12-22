@@ -15,15 +15,15 @@ void GraphInitiate(AdjMGraph* G)
 				G->edge[i][j] = MaxWeight;//MaxWeight表示权值无穷大
 			}
 		}
-	G->numOfEdges = 0;  //边的条数置为0
+	G->numOfEdges= 0;  //边的条数置为0
 	ListInitiate(&G->vertices);  //顶点顺序表初始化
 }
 
-//在带权有向图G中取第v个顶点的第一个邻接顶点，如果这样的邻接顶点存在，则返回该顶点在顶点顺序表的序号，否则返回-1.时间复杂度:O(n)。
+//在带权有向图G中取第v个顶点的第一个邻接顶点，如果这样的邻接顶点存在，则返回该顶点在顶点顺序表的序号，否则返回-1。时间复杂度:O(n)。
 int GetFirstVex(AdjMGraph G, int v)
 
 {
-	int col;
+	int col;//列号
 	DataType x;
 	v = v - 1;
 	if (ListGet(G.vertices, v, &x) == 0)
@@ -68,7 +68,6 @@ void CreatGraph(AdjMGraph* G, DataType v[], int n, RowColWeight W[], int e)
 	GraphInitiate(G);//图初始化
 	for (i = 0;i < n;i++)
 	{
-		//cout<<n<<endl;
 		InsertVertex(G, v[i]);//插入顶点
 	}
 	for (k = 0;k < e;k++)
@@ -87,7 +86,7 @@ void InsertEdge(AdjMGraph* G, int v1, int v2, int weight)
 			exit(1);
 		}
 		G->edge[v1][v2] = weight;
-		G->edge[v2][v1] = weight;
+		G->edge[v2][v1] = weight;//有向图，两边
 		G->numOfEdges++;
 	}
 }
@@ -95,7 +94,6 @@ void InsertEdge(AdjMGraph* G, int v1, int v2, int weight)
 void InsertVertex(AdjMGraph* G, DataType vertex)
 
 {
-	//if(IsVertex(G,vertex)<0)
 	if (ListInsert(&G->vertices, G->vertices.size, vertex) == 0)//在顶点顺序表的表尾插入顶点vertex
 	{
 		printf("插入顶点时空间已满无法插入！");
@@ -110,13 +108,9 @@ void InsertVertex(AdjMGraph* G, DataType vertex)
 void DeleteEdge(AdjMGraph* G, int v1, int v2)
 
 {
-
 	G->edge[v1][v2] = MaxWeight;
-
 	G->edge[v2][v1] = MaxWeight;
-
 	G->numOfEdges--;
-
 }
 
 //删除顶点
@@ -124,64 +118,39 @@ void DeleteEdge(AdjMGraph* G, int v1, int v2)
 //在带权有向图G中删除第v个顶点，时间复杂度:O(n^2)。
 
 void DeleteVertex(AdjMGraph* G, int v)
-
 {
 
 	int m3, i, j;
-
 	m3 = v - 1;
 
 	if (m3 < 0 || m3 >= G->vertices.size)
-
 	{
-
 		printf("对不起，此链路内没有您想要删除的路由节点\n");
-
 		exit(0);
-
 	}
-
 	else
-
 	{
-
-		//          for(i=m3;i<G->vertices.size;i++)
-
+		//for(i=m3;i < G->vertices.size;i++)
 		for (j = 0, i = m3;j < G->vertices.size;j++)
-
 		{
-
-			G->edge[j][i] = MaxWeight;
-
+			G->edge[j][i] = MaxWeight;//边的权值改为最大值表示不连通
 		}
 
-		//              for(i=m3;i<G->vertices.size;i++)
-
+		//for(i=m3;i < G->vertices.size;i++)
 		for (i = m3, j = 0;j < G->vertices.size;j++)
-
-			G->edge[i][j] = MaxWeight;
-
-		//          for(i=m3;i<G->vertices.size;i++)
-
-		//                  G->vertices.list[i]=G->vertices.list[i]-1;
-
-		//              G->vertices.size--;
-
-		//            printf("删除结点成功\n");
-
+			G->edge[i][j] = MaxWeight;//有向图修改两次
+		//for(i=m3;i < G->vertices.size;i++)
+		//G->vertices.list[i]=G->vertices.list[i]-1;
+		//G->vertices.size--;
+		printf("删除结点成功\n");
 	}
 
 }
 
 
 //迪克特斯拉算法求得是最短路径和相应的路由器
-
 void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
-
-/*带权图G从下标0顶点到其它顶点的最短距离distance*/
-
-/*和最短路径上顶点前驱下标path*/
-
+//带权图G从下标0顶点到其它顶点的最短距离distance和最短路径上顶点前驱下标path
 {
 	int n = G->vertices.size;
 	int* S = (int*)malloc(sizeof(int) * n); //S数组
@@ -209,7 +178,7 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 			}
 		/*当已不再存在路径时算法结束*/
 		if (minDis == MaxWeight) return;
-		S[u] = 1; /*标记顶点u已从集合T加入到集合S中*/
+		S[u] = 1; //标记顶点u已从集合T加入到集合S中*/
 		/*修改从v0到其它顶点的最短距离和最短路径*/
 		for (j = 0; j < n; j++)
 			if (S[j] == 0 && G->edge[u][j] < MaxWeight &&
@@ -219,12 +188,12 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 				path[j] = u;
 			}
 	}
-	printf("目的路由  下一跳路由\n");
+	printf("目的路由  下一跳路由\n");//一旦有单独的路由，路由表就无法输出
 	errno_t err;//标志文件打开与否
 	err = fopen_s(&fp, "routinlist.txt", "w");
 	for (i = 0;i < n;i++)
 	{
-		if (i == v0) continue;
+		if (i == v0) continue;//不输出到本路由的表项
 		j = i;
 		while (path[j] != v0)
 		{
@@ -232,25 +201,7 @@ void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[])
 			if (j == -1) break;
 		}
 		printf("%5d%12d\n", i + 1, j + 1);
-		fprintf(fp, "%5d%12d\n", i + 1, j + 1);
+		fprintf(fp, "%5d%12d\n", i + 1, j + 1);//写入到文件中去
 	}
 	fclose(fp);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

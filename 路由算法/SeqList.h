@@ -1,31 +1,19 @@
-#ifndef HHH
-#define HHH
-
+#pragma once
 #include <stdlib.h>
-
 #include <malloc.h>
-
 #include<windows.h>
-
 #include<stdio.h>
-
 #include<string.h>
-
 #include<conio.h>
+#include<iostream>
+using namespace std;
 
 typedef int DataType;
-
-#define MaxSize 10
-
-#define MaxVertices 10
-
-#define MaxWeight 10000
-
-
-
+#define MaxSize 20
+#define MaxVertices 20
+#define MaxWeight 9999
 
 typedef struct
-
 {
 	DataType list[MaxSize];
 	int size;
@@ -38,9 +26,6 @@ int ListDelete(SeqList* L, int i, DataType* x);
 int ListGet(SeqList L, int i, DataType* x);
 
 
-
-#endif // !HHH
-#pragma once
 
 
 

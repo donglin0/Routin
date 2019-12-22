@@ -158,7 +158,7 @@
     <ClCompile Include="InsertEdge.cpp" />
     <ClCompile Include="InsertVertex.cpp" />
     <ClCompile Include="seqlist.cpp" />
-    <ClCompile Include="路由算法.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjMGraph.h" />
