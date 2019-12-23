@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdjMGraph.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="GraphInitiate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -45,10 +42,22 @@
     <ClCompile Include="Dijkstra.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="seqlist.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="ListInitiate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListLength.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListInsert.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListDelete.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListGet.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,6 +93,21 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="Dijkstra.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListInitiate.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListLength.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListInsert.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListDelete.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListGet.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

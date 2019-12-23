@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AdjMGraph.cpp" />
     <ClCompile Include="CreatGraph.cpp" />
     <ClCompile Include="DeleteEdge.cpp" />
     <ClCompile Include="DeleteVertex.cpp" />
@@ -157,7 +156,11 @@
     <ClCompile Include="GraphInitiate.cpp" />
     <ClCompile Include="InsertEdge.cpp" />
     <ClCompile Include="InsertVertex.cpp" />
-    <ClCompile Include="seqlist.cpp" />
+    <ClCompile Include="ListDelete.cpp" />
+    <ClCompile Include="ListGet.cpp" />
+    <ClCompile Include="ListInitiate.cpp" />
+    <ClCompile Include="ListInsert.cpp" />
+    <ClCompile Include="ListLength.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +174,11 @@
     <ClInclude Include="GraphInitiate.h" />
     <ClInclude Include="InsertEdge.h" />
     <ClInclude Include="InsertVertex.h" />
+    <ClInclude Include="ListDelete.h" />
+    <ClInclude Include="ListGet.h" />
+    <ClInclude Include="ListInitiate.h" />
+    <ClInclude Include="ListInsert.h" />
+    <ClInclude Include="ListLength.h" />
     <ClInclude Include="SeqList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

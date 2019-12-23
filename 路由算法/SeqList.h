@@ -6,6 +6,7 @@
 #include<string.h>
 #include<conio.h>
 #include<iostream>
+#include<iomanip>
 using namespace std;
 
 typedef int DataType;
@@ -19,11 +20,11 @@ typedef struct
 	int size;
 }SeqList;
 
-void ListInitiate(SeqList* L);
-int ListLength(SeqList L);
-int ListInsert(SeqList* L, int i, DataType x);
-int ListDelete(SeqList* L, int i, DataType* x);
-int ListGet(SeqList L, int i, DataType* x);
+//void ListInitiate(SeqList* L);
+//int ListLength(SeqList L);
+//int ListInsert(SeqList* L, int i, DataType x);
+//int ListDelete(SeqList* L, int i, DataType* x);
+//int ListGet(SeqList L, int i, DataType* x);
 
 
 

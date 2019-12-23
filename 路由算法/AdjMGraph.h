@@ -23,12 +23,12 @@ typedef struct
 	int weight;  //权值
 }RowColWeight;
 
-void GraphInitiate(AdjMGraph* G);//置图G为空图
-void InsertVertex(AdjMGraph* G, DataType vertex);///插入顶点
-void InsertEdge(AdjMGraph* G, int v1, int v2, int weight);//删除一条第v1个顶点指向第v2个顶点的边。
-void DeleteEdge(AdjMGraph* G, int v1, int v2);//删除边								 
-void DeleteVertex(AdjMGraph* G, int v); //删除第v个顶点
-int GetFirstVex(AdjMGraph G, int v);//得到第一个邻接点
-int GetNextVex(AdjMGraph G, int v1, int v2);//v1的邻接点v2的邻接点
-void CreatGraph(AdjMGraph* G, DataType v[], int n, RowColWeight W[], int e);//创建图
-void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[]);//迪克特斯拉算法求得是最短路径和相应的路由器
+//void GraphInitiate(AdjMGraph* G);//置图G为空图
+//void InsertVertex(AdjMGraph* G, DataType vertex);///插入顶点
+//void InsertEdge(AdjMGraph* G, int v1, int v2, int weight);//删除一条第v1个顶点指向第v2个顶点的边。
+//void DeleteEdge(AdjMGraph* G, int v1, int v2);//删除边								 
+//void DeleteVertex(AdjMGraph* G, int v); //删除第v个顶点
+//int GetFirstVex(AdjMGraph G, int v);//得到第一个邻接点
+//int GetNextVex(AdjMGraph G, int v1, int v2);//v1的邻接点v2的邻接点
+//void CreatGraph(AdjMGraph* G, DataType v[], int n, RowColWeight W[], int e);//创建图
+//void Dijkstra(AdjMGraph* G, int v0, int distance[], int path[]);//迪克特斯拉算法求得是最短路径和相应的路由器

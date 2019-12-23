@@ -1,4 +1,14 @@
-﻿#include "AdjMGraph.h"
+﻿#include"CreatGraph.h"
+#include"DeleteEdge.h"
+#include"DeleteVertex.h"
+#include"Dijkstra.h"
+#include"GetFirstVex.h"
+#include"GetNextVex.h"
+#include"GraphInitiate.h"
+#include"InsertEdge.h"
+#include"InsertVertex.h"
+
+
 
 void putList();
 void Deletevertex();
